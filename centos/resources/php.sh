@@ -31,6 +31,7 @@ sed -ie "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|g" /et
 sed -ie 's/;listen.owner = nobody/listen.owner = freeswitch/g' /etc/php-fpm.d/www.conf
 sed -ie 's/;listen.group = nobody/listen.group = daemon/g' /etc/php-fpm.d/www.conf
 sed -ie 's/group = apache/group = daemon/g' /etc/php-fpm.d/www.conf
+sed -ie 's/;listen.acl_users = apache,nginx/listen.acl_users = freeswitch/g' /etc/php-fpm.d/www.conf
 
 #update the php.ini
 #sed -ie 's/post_max_size = .*/post_max_size = 80M/g' /etc/php.ini
